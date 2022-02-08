@@ -1,4 +1,5 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
     <p>
       <%= form.label :commenter %><br>
       <%= form.text_field :commenter %>
@@ -11,10 +12,7 @@
       <%= form.submit %>
     </p>
 
-    <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  </p>
+
   
   <% end %>
   
